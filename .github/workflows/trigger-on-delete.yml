@@ -1,0 +1,16 @@
+name: My Workflow
+
+
+on:
+  repository:
+    types: [deleted]
+    # Trigger the workflow for all repositories in the same organization
+    repositories:
+      - 'StefanVasilev94/test-template-to-*'
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do something on repo deletion
+        run: echo "A repository was deleted."
